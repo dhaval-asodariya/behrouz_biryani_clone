@@ -58,12 +58,14 @@ function AllCategory() {
               {Dataset[2].render_data.map((ExclusiveItem) => {
                 return (
                   <SwiperSlide className="AllCategory-slide-card">
+                    <Link to="/allCategories"> 
                     <Box className="AllCategory-slide-cardInner-img">
                       <img
                         className="AllCategory-slide-img"
                         src={ExclusiveItem.image}
                       ></img>
                     </Box>
+                    </Link>
                     <Box className='itemDiscription'>
                        
                       <Typography>{NameComponent(ExclusiveItem.name)}</Typography>

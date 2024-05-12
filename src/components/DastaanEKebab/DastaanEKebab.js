@@ -98,12 +98,14 @@ function DastaanEKebab() {
 
                 return (
                   <SwiperSlide className="SahiBiryanies-slide-card">
+                    <Link to={`/product/${DastaanEKebabItem.product_id}`}>
                     <Box className="SahiBiryanies-slide-cardInner-img">
                       <img
                         className="SahiBiryanies-slide-img"
                         src={DastaanEKebabItem.product_imageUrl}
                       ></img>
                     </Box>
+                    </Link>
                     <Box className="sahi-itemDiscription">
                       <Box>
                         <SvgIcon

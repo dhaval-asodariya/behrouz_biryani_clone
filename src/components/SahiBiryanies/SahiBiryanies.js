@@ -107,12 +107,14 @@ function SahiBiryanies() {
 
                 return (
                   <SwiperSlide className="SahiBiryanies-slide-card">
+                  <Link to={`/product/${SahiItem.product_id}`}>
                     <Box className="SahiBiryanies-slide-cardInner-img">
                       <img
                         className="SahiBiryanies-slide-img"
                         src={SahiItem.product_imageUrl}
                       ></img>
                     </Box>
+                    </Link>
                     <Box className="sahi-itemDiscription">
                       <Box>
                         <SvgIcon

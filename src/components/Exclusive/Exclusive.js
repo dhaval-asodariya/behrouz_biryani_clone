@@ -53,7 +53,11 @@ function Exclusive() {
           {Dataset[1].render_data.map((ExclusiveItem) => {
             return (
               <SwiperSlide className="exclusive-slide-card" > 
-                <Box className='slide-cardInner-img' ><img className="exclusive-slide-img" src={ExclusiveItem.image}></img></Box>
+                    <Link to="/allCategories/exclusively-on-behrouz-app"> 
+                <Box className='slide-cardInner-img' >
+                  <img className="exclusive-slide-img" src={ExclusiveItem.image}></img>
+                  </Box>
+                  </Link>
                <Box className='itemDiscription'>
                <Typography>{NameComponent(ExclusiveItem.name)}</Typography>
                </Box>
