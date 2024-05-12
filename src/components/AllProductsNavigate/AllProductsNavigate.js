@@ -17,6 +17,7 @@ function AllProductsNavigate({index}) {
   const[isCollectionOfData,setIsCollectionOfData] = useState(true)
   const[ActiveSideNav, setActiveSideNav] = useState(0);
   const dispatch = useDispatch();
+  const windowWidth= useSelector((state)=>state.windowWidth.width)
   // const isCollectionOfDataRedux = useSelector((state)=>(state.DataType.isCollectionOfData))
 
  
@@ -97,9 +98,9 @@ function AllProductsNavigate({index}) {
             <Typography variant="h4" sx={{borderBottom:'2px solid rgb(189, 162, 110)', width:"max-content"}}>{(currentPath.charAt(0).toUpperCase() + currentPath.slice(1)).replaceAll('-',' ')}</Typography>
           </Box>
           <Box className="allCategory-content-inner">
-            <Box className="allCategory-content-sideNav">
+            <Box sx={{width:windowWidth<800?'0':"30%"}} className="allCategory-content-sideNav">
                 <Box className="allCategory-content-sideNav-inner">
-                <List sx={{padding:'0px'}}>
+                <List sx={{padding:'0px',display:windowWidth<800?'none':"block"}}>
                 {isCollectionOfData? (currentPathData.collections.map((collec,index)=>(
                  
                      <Box sx={{borderLeft:`${index==ActiveSideNav?"2px":'0px'} solid rgb(189, 162, 110);
@@ -125,7 +126,7 @@ function AllProductsNavigate({index}) {
                 </List>
                 </Box>
             </Box>
-            <Box className="allCategory-content-displayItems">
+            <Box sx={{width:windowWidth <800 ? '100%':'70%'}} className="allCategory-content-displayItems">
                
                {isCollectionOfData?(currentPathData.collections.map((collec,index)=>(
                   <Box key={index} id={collec.collection_id} className='allCategory-display-oneCategory-items'>
@@ -136,7 +137,7 @@ function AllProductsNavigate({index}) {
                         {/* <Box className='category-card'></Box> */}
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                       {collec.products?.map((item, index) => (
-                       <Grid item xs={2} sm={4} md={4} key={index}>
+                       <Grid item xs={4} sm={4} md={4} key={index}>
                         
                           {/* <Box className='category-card'></Box> */}
                         <ProductCard product={item}/>
@@ -154,7 +155,7 @@ function AllProductsNavigate({index}) {
                     <Box className='singleCategory-content-cards'>
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                       {currentPathData.render_data?.map((item, index) => (
-                       <Grid item xs={2} sm={4} md={4} key={index}>
+                       <Grid item xs={4} sm={4} md={4} key={index}>
                         
                           {/* <Box className='category-card'></Box> */}
                         <ProductCard product={item}/>

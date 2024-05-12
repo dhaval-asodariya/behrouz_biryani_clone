@@ -8,8 +8,8 @@ import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import './NavTabs.css'
 import Dataset from "../Dataset/Dataset";
 import BorderAllIcon from '@mui/icons-material/BorderAll';
-import { Link, Outlet, useLocation } from "react-router-dom";
-import { Box, Container } from "@mui/material";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Box, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveCategory,setActiveIndex } from "../../Redux/ActiveCategorySlice";
 
@@ -56,9 +56,11 @@ const TabItem = styled(Tab)(({ theme,isActive  }) => ({
 
 export default function TabsInstagram() {
   const ActiveIndex = useSelector((state)=>state.ActiveCategory.ActiveIndex)
+  const windowWidth = useSelector((state) => state.windowWidth.width);
   const [tabIndex, setTabIndex] = React.useState(ActiveIndex);
   const location = useLocation();
   const dispatch = useDispatch();
+  const navigation = useNavigate();
   const ActiveCategory = useSelector((state)=>state.ActiveCategory.ActiveCategory)
   useEffect(()=>{
 // console.log('activeindex100',ActiveIndex)
@@ -98,49 +100,90 @@ function NavTabClickHandeler(index,categName){
   setTabIndex(index);
   handleDispach(categName)
 }
+
+const handleCategoryChange = (event) => {
+  const {value} = event.target
+  setTabIndex(value);
+  const ActiveCatobj = allCategoryName.filter((cate)=>cate.index == value)[0]
+  dispatch(setActiveIndex(value))
+  dispatch(setActiveCategory(ActiveCatobj.path))
+  navigation(`${ActiveCatobj.path}`)
+};
   return (
     <div className="NavTabs-section">
 
     <Container className="NavTabs-container">
     <Box className="allCat-navigation-btn">
-    <Tabs
+{windowWidth >800 ? 
+ <Tabs
     
-    textColor="inherit"
-    value={tabIndex}
-    // onChange={(e, index) => setTabIndex(index)}
-    sx={{
-      boxShadow: "inset 0 1px 0 0 #efefef",
-      overflow: "visible",
+ textColor="inherit"
+ value={tabIndex}
+ // onChange={(e, index) => setTabIndex(index)}
+ sx={{
+   boxShadow: "inset 0 1px 0 0 #efefef",
+   overflow: "visible",
+  
+   // opacity:'1',
+   [`& .${tabsClasses.indicator}`]: {
+     bottom: "unset",
+     top: 0,
+     height: "1px",
+     backgroundColor: "#262626",
      
-      // opacity:'1',
-      [`& .${tabsClasses.indicator}`]: {
-        bottom: "unset",
-        top: 0,
-        height: "1px",
-        backgroundColor: "#262626",
-        
-      },
-    }}
-  >
-      {allCategoryName.map((categName,index)=>{
-          const categnameSort = categName.name.length >20? categName.name.slice(0,20) +'...':categName.name;
-          const isActive = ActiveCategory ===   categName.path;
-          return(
-              <Link key={categName.index} to={categName.path} onClick={()=>NavTabClickHandeler(index,categName)}>
+   },
+ }}
+>
+   {allCategoryName.map((categName,index)=>{
+       const categnameSort = categName.name.length >20? categName.name.slice(0,20) +'...':categName.name;
+       const isActive = ActiveCategory ===   categName.path;
+       return(
+           <Link key={categName.index} to={categName.path} onClick={()=>NavTabClickHandeler(index,categName)}>
 <TabItem disableRipple label={categnameSort} isActive={isActive} icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src={categName.img} alt="Data" />} />
 </Link>
-          )
-          
-      })}
-    {/* <TabItem disableRipple label={"Data"} icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src="https://product-assets.faasos.io/eatsure_cms/production/69f3d0cc-0fcd-4b97-84ef-96358ab2012f.avif?d=375&tr:w-0.5,h-0.5" alt="Data" />} /> */}
-    {/* <TabItem disableRipple label={"Rule"} icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src="https://product-assets.faasos.io/eatsure_cms/production/69f3d0cc-0fcd-4b97-84ef-96358ab2012f.avif?d=375&tr:w-0.5,h-0.5" alt="Data" />} />
-    <TabItem
-      disableRipple
-      label={"Indexes"}
-      icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src="https://product-assets.faasos.io/eatsure_cms/production/69f3d0cc-0fcd-4b97-84ef-96358ab2012f.avif?d=375&tr:w-0.5,h-0.5" alt="Data" />}
-    />
-    <TabItem disableRipple label={"Usage"} icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src="https://product-assets.faasos.io/eatsure_cms/production/69f3d0cc-0fcd-4b97-84ef-96358ab2012f.avif?d=375&tr:w-0.5,h-0.5" alt="Data" />}/> */}
-  </Tabs>
+       )
+       
+   })}
+ {/* <TabItem disableRipple label={"Data"} icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src="https://product-assets.faasos.io/eatsure_cms/production/69f3d0cc-0fcd-4b97-84ef-96358ab2012f.avif?d=375&tr:w-0.5,h-0.5" alt="Data" />} /> */}
+ {/* <TabItem disableRipple label={"Rule"} icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src="https://product-assets.faasos.io/eatsure_cms/production/69f3d0cc-0fcd-4b97-84ef-96358ab2012f.avif?d=375&tr:w-0.5,h-0.5" alt="Data" />} />
+ <TabItem
+   disableRipple
+   label={"Indexes"}
+   icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src="https://product-assets.faasos.io/eatsure_cms/production/69f3d0cc-0fcd-4b97-84ef-96358ab2012f.avif?d=375&tr:w-0.5,h-0.5" alt="Data" />}
+ />
+ <TabItem disableRipple label={"Usage"} icon={<img style={{width:'37px',height:'37px',marginRight:'8px'}} src="https://product-assets.faasos.io/eatsure_cms/production/69f3d0cc-0fcd-4b97-84ef-96358ab2012f.avif?d=375&tr:w-0.5,h-0.5" alt="Data" />}/> */}
+</Tabs>
+:
+<div>
+<FormControl sx={{ m: 1, minWidth: 120,fontSize:'25px' }}>
+  <InputLabel sx={{fontSize:'15px'}} id="demo-simple-select-helper-label">Category</InputLabel>
+  <Select
+  sx={{fontSize:'15px'}}
+    labelId="demo-simple-select-helper-label"
+    id="demo-simple-select-helper"
+    value={tabIndex}
+    label="Category"
+    onChange={handleCategoryChange}
+  >
+    <MenuItem value="">
+      <em>None</em>
+    </MenuItem>
+    {allCategoryName.map((categName,index)=>{
+      
+       return(
+        
+             <MenuItem key={index} sx={{fontSize:'13px'}} value={categName.index}>{categName.name}</MenuItem>
+
+           
+      )})}
+   
+  </Select>
+  
+</FormControl>
+</div>
+}
+   
+
     </Box>
 
     </Container>

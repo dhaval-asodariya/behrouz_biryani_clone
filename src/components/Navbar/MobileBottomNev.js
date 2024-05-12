@@ -53,6 +53,7 @@ function handelActiveBtn(clickedBtn){
           onClick={() => handelActiveBtn('Home')}
         >home</BottomNavigationAction>
         </Link>
+        <Link>
         <BottomNavigationAction
           label="My Profile"
           icon={<User />}
@@ -60,12 +61,15 @@ function handelActiveBtn(clickedBtn){
           onClick={()=>HandleProfileOpen()}
           
         ></BottomNavigationAction>
+        </Link>
+        <Link>
         <BottomNavigationAction
           label="Party Order"
           icon={<Calendar />}
           style={{ color: acliveBtn === 'Order' ? 'rgb(189, 162, 110)' : 'rgb(102, 102, 102)' }}
           onClick={() => HandleIsOpen(!isOpen)}
         />
+        </Link>
         <Link to='cartTable'>
         <BottomNavigationAction
           label="Cart"

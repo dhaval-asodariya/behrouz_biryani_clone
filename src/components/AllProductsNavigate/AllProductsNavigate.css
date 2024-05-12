@@ -55,3 +55,19 @@ text-align: left;
 .category-card{
     padding: 0 7.5px;
 }
+
+@media screen and (max-width: 800px) {
+.allCategory-display-oneCategory-items{
+    padding: 20px 14px 0 10px;
+}
+.allCategory-content-sideNav{
+    padding: 0;
+    width: 0;
+}
+.AllProductsNavigate-section{
+    padding: 0;
+}
+.allCategory-content-displayItems{
+    width: 100%;
+}
+}
