@@ -17,8 +17,9 @@ import { setActiveCategory } from "../../Redux/ActiveCategorySlice";
 
 function Exclusive() {
   const dispatch = useDispatch();
-  function NameComponent(name) {
   const windowWidth= useSelector((state)=>state.windowWidth.width)
+
+  function NameComponent(name) {
 
     const truncatedName = windowWidth>1600?(name.length > 30 ? name.substring(0, 23) + '...' : name):(name.length > 23 ? name.substring(0, 20) + '...' : name);
   
@@ -40,7 +41,7 @@ function Exclusive() {
         <Box className='exclusive-carousal'>
         <Swiper className='exclusive-swiper'
           slidesPerView={"auto"}
-          spaceBetween={30}
+          spaceBetween={windowWidth >800 ? 30 : 15}
           keyboard={{
             enabled: true,
           }}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../../App.css'
 import styled, { createGlobalStyle } from "styled-components";
 import { Home, Bookmark, User, Calendar,ShoppingCart} from "react-feather";
 import { BottomNavigation, BottomNavigationAction, Box, Typography } from "@mui/material";

@@ -16,3 +16,9 @@ html{
 }
 a{text-decoration: none !important;
 color: rgb(29, 29, 29) ;}
+
+/* //mobile bottume nav below text */
+.css-58b16v{
+  opacity: 1 !important;
+  font-size: 13px !important;
+}

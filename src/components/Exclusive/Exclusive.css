@@ -104,6 +104,15 @@ height: 227px !important;
 
   }
 @media screen and (max-width: 450px) {
+.exclusive-section{
+    padding: 40px 0px 10px 15px;
+}
+.exclusive-container{
+    padding: 0 0 0 10px !important;
+}
+.exclusive-title h1{
+    font-size: 21px;
+}
     .exclusive-swiper{
         height: 200px !important;
     }
