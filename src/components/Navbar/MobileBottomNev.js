@@ -10,6 +10,8 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const logginId = useSelector((state)=>state.UserData.LoggedInId);
   const LogedInData =useSelector((state)=>state.UserData.LoggedInObj)[0]
+  const [acliveBtn,setActiveBtn]=useState('Home')
+  const windowDimension= useSelector((state)=>state.windowWidth.width)
   const navigation = useNavigate();
   function HandleProfileOpen(){
     handelActiveBtn('Profile')
@@ -21,12 +23,18 @@ function App() {
     setIsOpen(value)
     handelActiveBtn('Order')
   }
-    const [acliveBtn,setActiveBtn]=useState('Home')
-    const windowDimension= useSelector((state)=>state.windowWidth.width)
+
 function handelActiveBtn(clickedBtn){
     setActiveBtn(clickedBtn);
 }
-
+function handelHomeBtn(){
+  handelActiveBtn('Home')
+  navigation('/')
+}
+function handelCartBtn(){
+  handelActiveBtn('Cart')
+  navigation('/cartTable')
+}
 
   const isMobile = windowDimension <= 800;
   const isMobileNavVisible = isMobile?'flex':'none'
@@ -45,15 +53,15 @@ function handelActiveBtn(clickedBtn){
           zIndex: 100,
         }}
       >
-        <Link to='/'>
+        
         <BottomNavigationAction
           label="Home"
           icon={<Home />}
           style={{ color: acliveBtn === 'Home' ? 'rgb(189, 162, 110)' : 'rgb(102, 102, 102)',flexDirection: 'column'  }}
-          onClick={() => handelActiveBtn('Home')}
+          onClick={() => handelHomeBtn('Home')}
         >home</BottomNavigationAction>
-        </Link>
-        <Link>
+       
+        
         <BottomNavigationAction
           label="My Profile"
           icon={<User />}
@@ -61,22 +69,22 @@ function handelActiveBtn(clickedBtn){
           onClick={()=>HandleProfileOpen()}
           
         ></BottomNavigationAction>
-        </Link>
-        <Link>
+        
+        
         <BottomNavigationAction
           label="Party Order"
           icon={<Calendar />}
           style={{ color: acliveBtn === 'Order' ? 'rgb(189, 162, 110)' : 'rgb(102, 102, 102)' }}
           onClick={() => HandleIsOpen(!isOpen)}
         />
-        </Link>
-        <Link to='cartTable'>
+        
+        
         <BottomNavigationAction
           label="Cart"
           icon={<ShoppingCart />}
           style={{ color: acliveBtn === 'Cart' ? 'rgb(189, 162, 110)' : 'rgb(102, 102, 102)' }}
-          onClick={() => handelActiveBtn('Cart')}
-        /></Link>
+          onClick={() => handelCartBtn('Cart')}
+        />
       </BottomNavigation>
       
 
@@ -117,7 +125,7 @@ const Navbar = {
     list-style: none;
   `,
   Item: styled.li`
-    padding: 0 1rem;
+    padding: 0 0.8rem;
     cursor: pointer;
   `
 };
@@ -132,7 +140,7 @@ z-index:100;
   `,
   Items: styled(Navbar.Items)`
     flex: 1;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 
     justify-content: space-around;
   `,
@@ -141,7 +149,7 @@ z-index:100;
     flex-direction: column;
     align-items: center;
     
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   `,
   Icon: styled.span``
 };

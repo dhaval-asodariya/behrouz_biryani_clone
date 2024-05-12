@@ -22,3 +22,13 @@ color: rgb(29, 29, 29) ;}
   opacity: 1 !important;
   font-size: 13px !important;
 }
+
+@media screen and (max-width: 450px) {
+.css-58b16v{
+  font-size: 8px !important;
+}
+.css-118p9r0-MuiButtonBase-root-MuiBottomNavigationAction-root{
+  padding:0px 6px !important;
+  padding-top: 0 !important;
+}
+}
