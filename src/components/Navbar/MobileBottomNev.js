@@ -4,14 +4,21 @@ import { Home, Bookmark, User, Calendar,ShoppingCart} from "react-feather";
 import { BottomNavigation, BottomNavigationAction, Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import SideBar_Sample from './SideBar_Sample'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
- 
+  const logginId = useSelector((state)=>state.UserData.LoggedInId);
+  const LogedInData =useSelector((state)=>state.UserData.LoggedInObj)[0]
+  const navigation = useNavigate();
+  function HandleProfileOpen(){
+    handelActiveBtn('Profile')
+    logginId >0? navigation(`/dashboard/${LogedInData?.id}`):navigation('/login')
+  }
+  
   function HandleIsOpen(value){
     
     setIsOpen(value)
-    handelActiveBtn('Profile')
+    handelActiveBtn('Order')
   }
     const [acliveBtn,setActiveBtn]=useState('Home')
     const windowDimension= useSelector((state)=>state.windowWidth.width)
@@ -49,14 +56,14 @@ function handelActiveBtn(clickedBtn){
           label="My Profile"
           icon={<User />}
           style={{ color: acliveBtn === 'Profile' ? 'rgb(189, 162, 110)' : 'rgb(102, 102, 102)',flexDirection: 'column'  }}
-          onClick={()=>HandleIsOpen(!isOpen)}
+          onClick={()=>HandleProfileOpen()}
           
         ></BottomNavigationAction>
         <BottomNavigationAction
           label="Party Order"
           icon={<Calendar />}
           style={{ color: acliveBtn === 'Order' ? 'rgb(189, 162, 110)' : 'rgb(102, 102, 102)' }}
-          onClick={() => handelActiveBtn('Order')}
+          onClick={() => HandleIsOpen(!isOpen)}
         />
         <Link to='cartTable'>
         <BottomNavigationAction

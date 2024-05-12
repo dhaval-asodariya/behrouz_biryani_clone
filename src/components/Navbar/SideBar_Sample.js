@@ -38,7 +38,7 @@ function TemporaryDrawer({ isOpen, HandleIsOpen }) {
 
   const list = () => (
     <Box
-      sx={{ width: 350 }}
+      sx={{ width: 300 }}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
