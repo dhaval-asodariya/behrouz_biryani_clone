@@ -56,7 +56,7 @@ function SmallNavBar() {
            </Box>
            :
            <Box className='Snav-signUp-btn'>
-           <Link to='/signup'>
+           <Link to={`/dashboard/${LogedInData?.id}`}>
          <Button className="snav-signup-btn" style={{ color: 'rgb(189, 162, 110)', borderColor: 'rgb(189, 162, 110)' }} variant="outlined"><AccountCircleOutlinedIcon sx={{fontSize:'19px',marginRight:'6px'}}/>{LogedInData.name}</Button></Link>
          </Box>
             }
