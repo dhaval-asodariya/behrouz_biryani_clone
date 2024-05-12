@@ -1,0 +1,120 @@
+
+
+
+.SahiBiryanies-swiper{
+    height: 260px !important;
+    padding: 0;
+}
+.SahiBiryanies-slide-card{
+    width: 227px;
+    height: 237px;
+    display: flex;
+    flex-direction: column;
+position: relative;
+border: none;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.SahiBiryanies-slide-cardInner-img{
+    width: 227px;
+    height: 147px; 
+}
+.SahiBiryanies-slide-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 147px !important;
+    
+        width: 100% ;
+       
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+}
+.sahi-itemDiscription{
+    height: 88px;
+    width: 100%;
+   padding: 12px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.sahi-itemDiscription p{
+    padding: 0;
+    font-size: 16px;
+    font-family: Blinker, sans-serif;
+}
+.sahi-itemDiscription div{
+    display: flex;
+    align-items: center;
+}
+
+.price-add-box{
+    justify-content: space-between;
+}
+
+.price-add-box > div{
+  
+    max-width: 50%;
+}
+.incertItem-cart{
+    padding: 6px 30px 7px; 
+    font-size: 14px !important;
+    font-family: "Blinker", sans-serif;
+    line-height: normal !important;
+}
+.add-remove-countbtn{
+    color: rgb(44, 43, 42);
+    border: 1px solid  rgb(189, 162, 110);
+    border-radius: 4px;
+    /* width: 90px; */
+
+    justify-content: space-between;
+    align-items: center;
+}
+.add-remove-countbtn > button{
+    padding: 6px 8px !important;
+}
+
+
+
+
+@media screen and (max-width: 1600px) {
+
+    /* .exclusive-container{
+        max-width: 1200px !important;
+    } */
+    .SahiBiryanies-swiper{
+        height: 230px !important;
+    }
+    .SahiBiryanies-slide-card{
+        width: 182px;
+        height: 208px;
+    }
+    .SahiBiryanies-slide-cardInner-img{
+        width: 182px;
+        height: 117px; 
+    }
+    .SahiBiryanies-slide-img{
+        
+        height: 117px !important;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .SahiBiryanies-swiper{
+        height: 220px !important;
+    }
+    .SahiBiryanies-slide-card{
+        width: 156px;
+        height: 206px;
+    }
+    .SahiBiryanies-slide-cardInner-img{
+        width: 156px;
+        height: 101px;
+    }
+    .SahiBiryanies-slide-img{
+        height: 101px !important;
+    }
+    .sahi-itemDiscription{
+        height: 105px;
+    }
+   
+}

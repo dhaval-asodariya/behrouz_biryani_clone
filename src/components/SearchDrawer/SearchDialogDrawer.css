@@ -1,0 +1,27 @@
+
+
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+    min-height: 550px !important;
+}
+.searcedItem{
+padding: 8px;
+}
+.itemDiscription-n-p-r-i{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+padding: 0 10px;
+width: 100%;
+}
+.ProductDetails-details-title{
+margin-bottom: 5px !important;
+}
+.ProductDetails-details-title h6{
+    font-size: 16px ;
+    font-weight: 600;
+
+}
+.itemDiscription-rat-price{
+    display: flex;
+}

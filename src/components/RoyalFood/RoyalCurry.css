@@ -1,0 +1,66 @@
+
+
+
+.RoyalCurry-swiper{
+    height: 335px !important;
+    padding: 0;
+}
+.RoyalCurry-card-dimention{
+    width: 378px;
+    height: 327px;
+}
+.RoyalCurry-cardInner-dimention{
+    width: 378px;
+    height: 244px; 
+}
+.RoyalCurry-img-dimention{
+    height: 245px !important;
+}
+.rattings{
+    text-align: right;
+    padding: 4px 5px 4px 4px;
+    background-color: rgb(255, 248, 234);
+    border-radius: 0.4rem;
+    width: 38px;
+
+}
+
+@media screen and (max-width: 1600px) {
+ 
+    .RoyalCurry-swiper{
+        height: 295px !important;
+      
+    }
+    .RoyalCurry-card-dimention{
+        width: 305px;
+        height: 279px;
+    }
+    .RoyalCurry-cardInner-dimention{
+        width: 305px;
+        height: 198px; 
+    }
+    .RoyalCurry-img-dimention{
+        height: 198px !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .RoyalCurry-swiper{
+        height: 250px !important;
+    }
+    .RoyalCurry-card-dimention{
+        width: 209px;
+        height: 237px;
+    }
+    .RoyalCurry-cardInner-dimention{
+        width: 209px;
+        height: 140px;
+    }
+    .RoyalCurry-img-dimention{
+        height: 140px !important;
+    }
+    /* .sahi-itemDiscription{
+        height: 105px;
+    }
+    */
+}

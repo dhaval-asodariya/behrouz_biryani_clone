@@ -1,0 +1,115 @@
+
+
+
+.ProductDetails-wraper{
+padding: 60px 0px;
+}
+.ProductDetails-container{
+max-width: 1480px !important;
+padding: 20px !important;
+margin: 0 auto;
+}
+.ProductDetails-inner-flexbox{
+display: flex;
+/* align-items: center; */
+justify-content: space-between;
+width: 100%;
+}
+.ProductDetails-imgbox{
+width: 49%;
+max-width: 700px;
+max-height: 470px;
+border-radius: 5px;
+}
+.ProductDetails-imgbox img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.ProductDetails-details{
+width: 49%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.ProductDetails-details-rate-share{
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.product-img-n-p{
+    display: flex;
+    align-items: center;
+}
+.product-img-n-p p {
+    font-size: 16px;
+    margin:0 16px 0 10px;
+}
+.product-d-ratting{
+    /* height: 30px; */
+    margin-right: 16px;
+    padding: 4px 6px;
+    background-color: rgb(221, 243, 221);
+    color: rgb(54, 177, 22);
+
+    display: flex;
+    align-items: end;
+}
+.product-d-ratting p{
+    font-size: 16px;
+    font-weight: 700;
+}
+.product-d-share{
+    display: flex;
+    align-items: center;
+
+}
+.product-d-share p {
+    font-size: 16px;
+    margin-right: 5px;
+}
+.ProductDetails-details-title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.ProductDetails-details-title svg{
+    /* margin-top: 15px; */
+}
+.ProductDetails-details-title h5{
+    font-size: 24px;
+    color: rgb(51, 51, 51);
+    font-weight: 600;
+}
+.ProductDetails-details-discription{
+    margin-bottom: 16px;
+}
+.ProductDetails-details-discription p{
+    text-align: left;
+font-size: 16px;
+color: rgb(51, 51, 51);
+font-weight: 300;
+margin: 0;
+}
+.ProductDetails-details-price-add{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+max-width: 480px;
+}
+.ProductDetails-details-price-add h5{
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+.ProductDetails-details-price-add >button{
+    padding: 12px 30px ;
+    width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: none;
+    line-height: normal;
+}

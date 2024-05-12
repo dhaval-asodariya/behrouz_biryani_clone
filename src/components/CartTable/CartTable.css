@@ -1,0 +1,58 @@
+.table{
+    padding: 50px;
+}
+.thead{
+    /* margin-bottom: 500px; */
+}
+th{
+    font-size: 20px;
+    text-align: left;
+}
+
+td{
+    text-align: left;
+    font-size: 18px;
+    min-width: 300px;
+   padding: 10px;
+}
+.cart-title{
+    font-size: 25px;
+}
+
+/* empty cart css  */
+.emptyCart-section{
+
+}
+.emptyCart-Container{
+    display: flex;
+    padding: 12px 30px;
+}
+.emptyCart-p-button{
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: space-between; */
+    align-items: center;
+
+}
+.emptyCart-p-button h4{
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+.emptyCart-p-button p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color:  rgb(189, 162, 110);
+}
+.emptyCart-p-button button{
+    width: 328px;
+    background-color: rgb(189, 162, 110);
+    color: rgb(255, 255, 255);
+    padding: 8px 25px;
+    font-size: 15px;
+}
+.emptyCart-p-button a{
+    color: white;
+}

@@ -1,0 +1,21 @@
+
+
+
+.NavTabs-section{
+    padding: 20px 0px;
+    min-height: 500px;
+    background: #efdcb4; 
+}
+.NavTabs-container{
+    max-width: 1220px !important;
+margin: auto;
+}
+.css-heg063-MuiTabs-flexContainer{
+    padding: 10px 0;
+    justify-content: space-between;
+}
+.css-1wpfuef-MuiButtonBase-root-MuiTab-root{
+background-color: white;
+color: black;
+/* opacity: 0.9 !important; */
+}

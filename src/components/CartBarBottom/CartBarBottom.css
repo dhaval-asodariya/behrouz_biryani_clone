@@ -1,0 +1,33 @@
+
+.Cartbar-section{
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+}
+.CartBar-Container{
+    border: 1px solid rgba(220, 211, 211, 0.77);
+    width: 50%;
+    margin: auto;
+    padding: 8px 15px;
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.CartBar-Container p {
+    font-size: 14px;
+    color: black;
+}
+.CartBar-Container button{
+    background-color: rgb(189, 162, 110);
+    color: rgb(255, 255, 255);
+    padding: 8px 25px;
+    font-size: 15px;
+}
+.CartBar-Container a{
+    color: white;
+}

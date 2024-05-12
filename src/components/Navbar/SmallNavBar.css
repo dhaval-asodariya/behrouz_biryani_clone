@@ -1,0 +1,61 @@
+
+
+
+.Snav-location{
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+   padding: 0 6px;
+}
+.location-text{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.location-svg{
+    border:1px solid #bda26e;
+    width:35px;
+    height:34px;
+    border-radius:50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.loc-city-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+
+    color: rgb(189, 162, 110);
+  
+   
+}
+.loc-city-icon p{
+    font-weight: 700;
+    font-size: 18px;
+    font-family: Blinker, sans-serif !important;
+}
+.loc-address{
+    font-size: 14px !important;
+    margin-top: 3px;
+    font-family: Blinker, sans-serif !important;
+}
+.snav-signup-btn{
+    padding: 5px 10px !important;
+     color: rgb(189, 162, 110);
+     border-color: rgb(189, 162, 110);
+     font-size: 14px !important;
+     font-family: Blinker, sans-serif !important;
+}
+
+/* mobile bottom css  */
+.css-1gh6k7f-MuiBottomNavigationAction-label{
+    font-size: 15px !important;
+    opacity: 1 !important;
+    font-family: Blinker, sans-serif !important;
+}
