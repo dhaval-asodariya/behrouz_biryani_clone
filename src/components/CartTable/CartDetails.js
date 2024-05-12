@@ -65,7 +65,7 @@ function CartDetails() {
                     ).length;
                     return (
                      <div className='singleproduct-box'>
-                        <div style={{display:'flex'}}>
+                        <div className='singleproduct-box-img-discrip' style={{display:'flex'}}>
                           <img src={item.product_imageUrl}/>
                         <div className='productName-discription'>
                             {/* <h2>{item.product_name}</h2>
@@ -119,7 +119,7 @@ function CartDetails() {
                     </div>
                     <div className='totalPrice-n-btn'>
                         <p>Total Amount: <span> ₹{CartPrice}</span></p>
-                        <Button variant="contained" onClick={() =>toast.success("Your order is placed successfully.")}>
+                        <Button sx={{maxWidth:'85%'}} variant="contained" onClick={() =>toast.success("Your order is placed successfully.")}>
                 <ShoppingCartOutlinedIcon sx={{ fontSize: "20px" }} />{" "}
                  Checkout Now
               </Button>

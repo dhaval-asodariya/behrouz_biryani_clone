@@ -7,6 +7,7 @@
     padding: 40px;
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
 }
 .Cartitems-list{
  margin-right: 25px;
@@ -69,6 +70,11 @@ align-items: flex-start;
     margin: 0px 0 15px;
     color:  rgb(189, 162, 110);
    }
+   .totalPrice-n-btn{
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+   }
    .totalPrice-n-btn p{
     text-align: left;
     font-size: 16px;
@@ -96,6 +102,9 @@ align-items: flex-start;
      }
    }
    @media screen and (max-width: 500px) {
+.cartItems-Container{
+     padding: 20px;
+}
    .singleproduct-box{
      flex-direction:column ;
    }
@@ -104,4 +113,9 @@ align-items: flex-start;
      display: flex;
      justify-content: space-between;
    }
+   }
+   @media screen and (max-width: 380px) {
+     .singleproduct-box-img-discrip{
+          flex-direction:column
+     }
    }

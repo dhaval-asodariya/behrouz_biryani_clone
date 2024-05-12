@@ -14,7 +14,7 @@ function App() {
     handelActiveBtn('Profile')
     logginId >0? navigation(`/dashboard/${LogedInData?.id}`):navigation('/login')
   }
-  
+
   function HandleIsOpen(value){
     
     setIsOpen(value)
@@ -31,7 +31,7 @@ function handelActiveBtn(clickedBtn){
   const isMobileNavVisible = isMobile?'flex':'none'
   return (
     
-<Box>
+<Box sx={{maxWidth:'100%',overflowX:'hidden'}}>
       <Box sx={{ backgroundColor: '#eeeeee', minHeight: '0vh' }}>
       <BottomNavigation
         sx={{

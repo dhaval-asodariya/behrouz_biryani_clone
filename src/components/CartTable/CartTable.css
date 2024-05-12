@@ -48,6 +48,8 @@ td{
 }
 .emptyCart-p-button button{
     width: 328px;
+    max-width: 80%;
+    margin: auto;
     background-color: rgb(189, 162, 110);
     color: rgb(255, 255, 255);
     padding: 8px 25px;

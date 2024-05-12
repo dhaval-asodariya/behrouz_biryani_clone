@@ -12,7 +12,7 @@ function CartBarBottom() {
     <div className='Cartbar-section' style={{bottom:ItemsInCart>0?'50px':"-100px"}}>
         <Box className='CartBar-Container'>
             <Typography><span>{ItemsInCart}</span> Items</Typography>
-            <Button variant="contained"><ShoppingCartOutlinedIcon sx={{fontSize:'20px'}}/> <Link to='cartTable'> View Cart</Link></Button>
+            <Button variant="contained"><ShoppingCartOutlinedIcon sx={{fontSize:'18px'}}/> <Link to='cartTable'> View Cart</Link></Button>
         </Box>
     </div>
   )
