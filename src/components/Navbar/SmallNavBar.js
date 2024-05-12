@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AppBar, Avatar, Box, Button, Container, SvgIcon, Toolbar, Typography } from "@mui/material";
 import logo from "../../Assets/Images/bb-brandcolor-logo.svg";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -10,13 +10,16 @@ import './SmallNavBar.css'
 import MobileBottomNev from './MobileBottomNev'
 import CartBarBottom from "../CartBarBottom/CartBarBottom";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 
 
 
 function SmallNavBar() {
- 
+  const logginId = useSelector((state)=>state.UserData.LoggedInId);
+  const LogedInData =useSelector((state)=>state.UserData.LoggedInObj)[0]
+
   return (
     <div style={{}}>
       <AppBar
@@ -46,10 +49,18 @@ function SmallNavBar() {
                     <Typography className="loc-address">Adajan FC, Surat</Typography>
                 </Box>
             </Box>
-            <Box className='Snav-signUp-btn'>
-              <Link to='/signup'>
-            <Button className="snav-signup-btn" style={{ color: 'rgb(189, 162, 110)', borderColor: 'rgb(189, 162, 110)' }} variant="outlined"><AccountCircleOutlinedIcon sx={{fontSize:'19px',marginRight:'6px'}}/> Sign Up</Button></Link>
-            </Box>
+            {logginId == 0 ?
+             <Box className='Snav-signUp-btn'>
+             <Link to='/signup'>
+           <Button className="snav-signup-btn" style={{ color: 'rgb(189, 162, 110)', borderColor: 'rgb(189, 162, 110)' }} variant="outlined"><AccountCircleOutlinedIcon sx={{fontSize:'19px',marginRight:'6px'}}/> Sign Up</Button></Link>
+           </Box>
+           :
+           <Box className='Snav-signUp-btn'>
+           <Link to='/signup'>
+         <Button className="snav-signup-btn" style={{ color: 'rgb(189, 162, 110)', borderColor: 'rgb(189, 162, 110)' }} variant="outlined"><AccountCircleOutlinedIcon sx={{fontSize:'19px',marginRight:'6px'}}/>{LogedInData.name}</Button></Link>
+         </Box>
+            }
+           
 
           </Toolbar>
           {/* <CartBarBottom/> */}
