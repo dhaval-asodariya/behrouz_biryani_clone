@@ -85,3 +85,23 @@ align-items: flex-start;
     padding: 8px 25px;
     font-size: 16px;
    }
+
+   @media screen and (max-width: 800px) {
+     .cartItems-Container{
+          flex-direction: column;
+     }
+     .Cartitems-list{
+          width: 100%;
+          margin: auto;
+     }
+   }
+   @media screen and (max-width: 500px) {
+   .singleproduct-box{
+     flex-direction:column ;
+   }
+   .productCount-price-crudActions{
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+   }
+   }

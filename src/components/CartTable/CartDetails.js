@@ -65,7 +65,8 @@ function CartDetails() {
                     ).length;
                     return (
                      <div className='singleproduct-box'>
-                        <div style={{display:'flex'}}><img src={item.product_imageUrl}/>
+                        <div style={{display:'flex'}}>
+                          <img src={item.product_imageUrl}/>
                         <div className='productName-discription'>
                             {/* <h2>{item.product_name}</h2>
                             <p>{item.small_description}</p> */}

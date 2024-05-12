@@ -97,6 +97,7 @@ const Dashboard = () => {
   const[dashData , setDashData]=  useState({})
   const dashData1 = useSelector((state)=>state.UserData.LoggedInObj)[0]
   const itemsInCart = useSelector((state)=>state.cartItems.ItemsInCart)
+  const windowWidth= useSelector((state)=>state.windowWidth.width)
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top on component mount
@@ -113,7 +114,7 @@ function logoutCallHandeler(){
   return (
     <ThemeProvider theme={theme}>
     <div className={classes.root}>
-    <Paper elevation={3} className={classes.outerpaper} >
+    <Paper sx={{flexDirection:`${windowWidth>800?'row':'column'}`}} elevation={3} className={classes.outerpaper} >
 
       {/* <Drawer
         className={classes.drawer}
@@ -122,7 +123,8 @@ function logoutCallHandeler(){
           paper: classes.drawerPaper,
         }}
       > */}
-      <Paper elevation={3} className={classes.sideNav}>
+      {windowWidth >800?
+      (<Paper elevation={3} className={classes.sideNav}>
         <div style={{display:'flex',alignItems:'center',justifyContent:'flex-start',color:'rgb(189, 162, 110)',padding:'20px'}} className={classes.toolbar}>
           <Typography variant="h1" align="center">
             User Dashboard
@@ -158,7 +160,15 @@ function logoutCallHandeler(){
             <ListItemText primary="Logout" />
           </ListItem>
         </List>
-        </Paper>
+        </Paper>)
+      :(<div style={{display:'flex',alignItems:'center',justifyContent:'flex-start',color:'rgb(189, 162, 110)',padding:'20px'}} className={classes.toolbar}>
+          <Typography variant="h1" align="center">
+            User Dashboard
+          </Typography>
+          <Divider />
+        </div>
+        )}
+      
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {/* Your content goes here */}
