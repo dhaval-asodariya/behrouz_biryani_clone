@@ -111,6 +111,7 @@ function NavTabClickHandeler(index,categName){
     sx={{
       boxShadow: "inset 0 1px 0 0 #efefef",
       overflow: "visible",
+     
       // opacity:'1',
       [`& .${tabsClasses.indicator}`]: {
         bottom: "unset",
