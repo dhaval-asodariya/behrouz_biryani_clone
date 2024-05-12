@@ -18,6 +18,7 @@ const TabItem = styled(Tab)(({ theme,isActive  }) => ({
   minWidth: 0,
   fontSize: 10,
   padding: "0px",
+  // marginTop:"10px",
   height: '37px',
   minHeight:" 37px",
   width: "126px",
