@@ -51,7 +51,7 @@ dispatch(updateUserSliceOnCartData())
                               image={product.product_imageUrl}
                               alt="green iguana"
                             />
-                            <CardContent sx={{paddingBottom:'0'}}>
+                            <CardContent sx={{paddingBottom:'0',minHeight:'200px'}}>
                               <Typography gutterBottom sx={{fontSize:"18px",fontWeight:'600',minHeight:'70px'}} variant="h5" component="div">
                               <SvgIcon sx={{fontSize:'15px',marginRight:'6px'}} component={product.is_veg?VegIcon:NonVegIcon} viewBox="0 0 12 9" />
 
@@ -59,7 +59,7 @@ dispatch(updateUserSliceOnCartData())
                               </Typography>
 
                               <Typography variant="body1" sx={{fontSize:'13px'}} color="text.secondary">
-                               {product.small_description?.length>100?product.small_description.slice(0,95)+'...':product.small_description}
+                               {product.small_description?.length>100?product.small_description.slice(0,90)+'...':product.small_description}
                               </Typography>
 
                               <div className='product-d-ratting' style={{width:'fit-content',height:'25px',padding:'0px 6px',fontSize:'15px',margin:'10px 0'}}>
